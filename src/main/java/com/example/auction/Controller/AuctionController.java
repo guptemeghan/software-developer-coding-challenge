@@ -2,6 +2,7 @@ package com.example.auction.Controller;
 
 import com.example.auction.Model.Auction;
 import com.example.auction.Model.Car;
+import com.example.auction.Model.CreateAuctionRequest;
 import com.example.auction.Model.Users;
 import com.example.auction.Service.IAuctionService;
 import com.example.auction.Service.ICarService;
@@ -27,12 +28,9 @@ public class AuctionController {
     }
 
     @PostMapping
-    public ResponseEntity<Auction> createAuction(@RequestParam int carId, @RequestParam double startingPrice) throws Exception {
-        Car car = carService.getCarById(carId);
-        if(car==null) {
-
-        }
-        return new ResponseEntity<>(auctionService.createAuction(car, startingPrice), HttpStatus.CREATED);
+    public ResponseEntity<Auction> createAuction(@RequestBody CreateAuctionRequest createAuctionRequest) throws Exception {
+        Car car = carService.getCarById(createAuctionRequest.getCarId());
+        return new ResponseEntity<>(auctionService.createAuction(car, createAuctionRequest.getStartingPrice()), HttpStatus.CREATED);
     }
 
     @GetMapping(value = "/{id}")

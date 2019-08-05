@@ -3,6 +3,7 @@ package com.example.auction.Controller;
 import com.example.auction.Exception.IncorrectAmountException;
 import com.example.auction.Model.Auction;
 import com.example.auction.Model.Bid;
+import com.example.auction.Model.CreateBidRequest;
 import com.example.auction.Model.Users;
 import com.example.auction.Service.IAuctionService;
 import com.example.auction.Service.IBidService;
@@ -29,7 +30,6 @@ public class BidController {
 
     @Autowired
     public BidController(IBidService bidService, IUserService userService, IAuctionService auctionService) {
-
         this.bidService = bidService;
         this.userService = userService;
         this.auctionService = auctionService;
@@ -37,10 +37,10 @@ public class BidController {
 
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Bid> addBid(@RequestParam double bidAmount, @RequestParam int userId, @RequestParam int auctionId) throws Exception {
-        Users user = userService.getUserById(userId);
-        Auction auction = auctionService.getAuctionById(auctionId);
-        Bid bid = new Bid(bidAmount, user, auction);
+    public ResponseEntity<Bid> addBid(@RequestBody CreateBidRequest createBidRequest) throws Exception {
+        Users user = userService.getUserById(createBidRequest.getUserId());
+        Auction auction = auctionService.getAuctionById(createBidRequest.getAuctionId());
+        Bid bid = new Bid(createBidRequest.getBidAmount(), user, auction);
 
         return new ResponseEntity<>(bidService.createBid(bid), HttpStatus.CREATED);
     }
