@@ -1,6 +1,6 @@
 package com.example.auction.Service;
 
-import com.example.auction.Dao.AuctionRepository;
+import com.example.auction.Repository.AuctionRepository;
 import com.example.auction.Exception.AuctionNotFoundException;
 import com.example.auction.Model.Auction;
 import com.example.auction.Model.Car;

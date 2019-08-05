@@ -1,6 +1,6 @@
 package com.example.auction.Service;
 
-import com.example.auction.Dao.UserRepository;
+import com.example.auction.Repository.UserRepository;
 import com.example.auction.Exception.UserNotFoundException;
 import com.example.auction.Model.Users;
 import org.springframework.beans.factory.annotation.Autowired;

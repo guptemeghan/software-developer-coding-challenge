@@ -1,6 +1,6 @@
 package com.example.auction.Service;
 
-import com.example.auction.Dao.BidRepository;
+import com.example.auction.Repository.BidRepository;
 import com.example.auction.Exception.IncorrectAmountException;
 import com.example.auction.Model.Auction;
 import com.example.auction.Model.Bid;

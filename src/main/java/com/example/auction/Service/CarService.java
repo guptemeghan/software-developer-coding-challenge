@@ -1,6 +1,6 @@
 package com.example.auction.Service;
 
-import com.example.auction.Dao.CarRepository;
+import com.example.auction.Repository.CarRepository;
 import com.example.auction.Exception.CarNotFoundException;
 import com.example.auction.Model.Car;
 import org.springframework.beans.factory.annotation.Autowired;

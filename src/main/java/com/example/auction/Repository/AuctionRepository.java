@@ -1,7 +1,6 @@
-package com.example.auction.Dao;
+package com.example.auction.Repository;
 
 import com.example.auction.Model.Auction;
-import com.example.auction.Model.Car;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
