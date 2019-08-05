@@ -2,6 +2,7 @@ package com.example.auction.Model;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by meghan on 8/4/2019.
@@ -14,6 +15,9 @@ public class Users {
     private String firstName;
     private String lastName;
     private String emailAddr;
+
+    @OneToMany //one user can make many bids
+    private List<Bid> listOfBids;
 
     public int getUserId() {
         return userId;
