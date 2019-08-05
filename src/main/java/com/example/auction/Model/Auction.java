@@ -14,14 +14,6 @@ public class Auction {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int auctionId;
 
-    public double getStartingPrice() {
-        return startingPrice;
-    }
-
-    public void setStartingPrice(double startingPrice) {
-        this.startingPrice = startingPrice;
-    }
-
     private double startingPrice;
 
     @OneToOne(targetEntity = Car.class)
@@ -37,7 +29,6 @@ public class Auction {
 
     @OneToOne(targetEntity = Bid.class)
     private Bid winningBid;
-
 
     public int getAuctionId() {
         return auctionId;
@@ -77,6 +68,14 @@ public class Auction {
 
     public void setWinningBid(Bid winningBid) {
         this.winningBid = winningBid;
+    }
+
+    public double getStartingPrice() {
+        return startingPrice;
+    }
+
+    public void setStartingPrice(double startingPrice) {
+        this.startingPrice = startingPrice;
     }
 
     public Auction() {

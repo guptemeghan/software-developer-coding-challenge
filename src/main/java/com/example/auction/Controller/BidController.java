@@ -42,26 +42,6 @@ public class BidController {
         Auction auction = auctionService.getAuctionById(auctionId);
         Bid bid = new Bid(bidAmount, user, auction);
 
-        if(Double.compare(bid.getAmount(), auction.getStartingPrice()) < 0) {
-            throw new IncorrectAmountException("Amount less than minimum auction price");
-        }
-
-        if(auction.getWinningBid()!=null && Double.compare(bid.getAmount(), auction.getWinningBid().getAmount()) < 0) {
-            throw new IncorrectAmountException("Amount less than current largest bid");
-        }
-
-        auction.setWinningBid(bid);
-        bid.setAuction(auction);
-        auction.setWinnerUser(user);
-        List<Bid> listOfBids;
-        if(auction.getBids()==null) {
-            listOfBids = new ArrayList<>();
-        } else {
-            listOfBids = auction.getBids();
-        }
-        listOfBids.add(bid);
-        auction.setBids(listOfBids);
-
         return new ResponseEntity<>(bidService.createBid(bid), HttpStatus.CREATED);
     }
 
