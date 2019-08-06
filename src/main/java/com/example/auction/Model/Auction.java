@@ -21,7 +21,6 @@ public class Auction {
     private Car car;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "auction", cascade = CascadeType.ALL)
-//    @JsonIgnore
     private List<Bid> bids;
 
     @OneToOne(targetEntity = Users.class)
@@ -88,5 +87,18 @@ public class Auction {
     public Auction(Car car, double startingPrice) {
         this.setCar(car);
         this.setStartingPrice(startingPrice);
+    }
+    //only used for unit tests
+    public Auction(Car car, double startingPrice, List<Bid> bidList) {
+        this.setCar(car);
+        this.setStartingPrice(startingPrice);
+        this.setBids(bidList);
+    }
+
+    public Auction(Car car, double startingPrice, List<Bid> bidList, Bid winningBid) {
+        this.setCar(car);
+        this.setStartingPrice(startingPrice);
+        this.setBids(bidList);
+        this.setWinningBid(winningBid);
     }
 }

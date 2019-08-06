@@ -31,4 +31,12 @@ public class CreateBidRequest {
     public void setBidAmount(double bidAmount) {
         this.bidAmount = bidAmount;
     }
+
+    public CreateBidRequest(){}
+
+    public CreateBidRequest(int userId, int auctionId, double bidAmount) {
+        this.setUserId(userId);
+        this.setAuctionId(auctionId);
+        this.setBidAmount(bidAmount);
+    }
 }

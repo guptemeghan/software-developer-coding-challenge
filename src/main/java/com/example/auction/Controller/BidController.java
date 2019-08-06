@@ -1,6 +1,5 @@
 package com.example.auction.Controller;
 
-import com.example.auction.Exception.IncorrectAmountException;
 import com.example.auction.Model.Auction;
 import com.example.auction.Model.Bid;
 import com.example.auction.Model.CreateBidRequest;
@@ -14,8 +13,6 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.nio.file.FileSystemNotFoundException;
-import java.util.ArrayList;
 import java.util.List;
 
 /**

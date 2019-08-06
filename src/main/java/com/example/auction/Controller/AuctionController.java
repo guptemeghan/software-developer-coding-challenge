@@ -3,11 +3,9 @@ package com.example.auction.Controller;
 import com.example.auction.Model.Auction;
 import com.example.auction.Model.Car;
 import com.example.auction.Model.CreateAuctionRequest;
-import com.example.auction.Model.Users;
 import com.example.auction.Service.IAuctionService;
 import com.example.auction.Service.ICarService;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

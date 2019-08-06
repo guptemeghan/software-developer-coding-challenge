@@ -62,7 +62,7 @@ public class Bid {
         this.setAmount(amount);
         this.setUser(user);
     }
-
+    //only used for unit test
     public Bid(double amount, Users user, Auction auction) {
         this.setAmount(amount);
         this.setUser(user);

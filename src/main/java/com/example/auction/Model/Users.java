@@ -50,4 +50,12 @@ public class Users {
     public void setEmailAddr(String emailAddr) {
         this.emailAddr = emailAddr;
     }
+
+    public Users(){}
+
+    public Users(String firstName, String lastName, String emailAddr) {
+        this.setFirstName(firstName);
+        this.setLastName(lastName);
+        this.setEmailAddr(emailAddr);
+    }
 }
